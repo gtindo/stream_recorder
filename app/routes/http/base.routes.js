@@ -28,11 +28,15 @@ router.get('/record/:duration', async (req, res) => {
 
 let captureStream = async (link, time) => {
 	return new Promise((resolve, reject) => {
-		request.get(link, {timeout: 2000}, (err, res) => {
+		let req = request.get(link, (err, res) => {
 			if(err) reject(err);
-			else resolve(true);
-		}).pipe(fs.createWriteStream("sound_2.mp3"));
+		}).pipe(fs.createWriteStream("sound_27.mp3"));
 
+		setTimeout(() => {
+			console.log("duration");
+			req.destroy();
+			resolve(true);
+		}, time);
 		
 	});
 }
