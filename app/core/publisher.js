@@ -13,7 +13,7 @@ class Publisher extends RabbitMqManager{
 			await channel.sendToQueue(this.queue, Buffer.from(message));
 			console.log(`[>] Message sent to ${this.queue} queue.`);
 		}catch(err){
-
+			console.log(err);
 		}
 	}
 }

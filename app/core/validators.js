@@ -1,8 +1,13 @@
+const Joi = require('@hapi/joi');
 
-const request = {
-	action: "action/",
-	message: {
-		//message
-		input: "string"
-	}
-}
+const recordSchema  = Joi.object().keys({
+	action: Joi.string().required(),
+	link: Joi.string(),
+	ext: Joi.string.required(),
+	time: Joi.number().required()
+})
+
+
+exports.schemas = {
+	recordSchema: recordSchema
+};

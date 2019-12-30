@@ -21,12 +21,14 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use('/static', express.static('static'));
+
 app.use("/", baseRouter);
 
 app.listen(configs.HTTP_PORT, () => {
 	console.log(`HTTP Server listening on port ${configs.HTTP_PORT}`);
 	lauchConsumer();
-})
+});
 
 
 

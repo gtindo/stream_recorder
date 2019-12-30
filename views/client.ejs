@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Socket Client</title>
+</head>
+<body>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+	<script>
+		var socket = io();
+		
+		var data = JSON.stringify({
+			clientId: "Client_21"
+		});
+
+		socket.emit('register', data);
+
+		socket.on("registration", (message) => {
+			console.log(message);
+		});
+
+		socket.on("http", (message) => {
+			console.log(message);
+		});
+	</script>
+</body>
+</html>

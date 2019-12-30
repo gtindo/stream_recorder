@@ -16,15 +16,19 @@
   "author": "G_T_Y",
   "license": "ISC",
   "dependencies": {
+    "@hapi/joi": "^16.1.8",
     "amqplib": "^0.5.5",
     "body-parser": "^1.19.0",
     "chai": "^4.2.0",
     "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "mocha": "^6.2.2",
     "mongoose": "^5.7.10",
     "request": "^2.88.0",
-    "supertest": "^4.0.2"
+    "socket.io": "^2.3.0",
+    "supertest": "^4.0.2",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
